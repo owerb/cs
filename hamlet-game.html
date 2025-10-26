@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hamlet: The Interactive Journey</title>
+    <link rel="stylesheet" href="hamlet-game.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="game-container">
+        <!-- Header -->
+        <header class="game-header">
+            <h1 class="game-title">🎭 Hamlet: The Interactive Journey</h1>
+            <div class="game-stats">
+                <div class="stat">
+                    <span class="stat-label">Act:</span>
+                    <span id="current-act">I</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">Scene:</span>
+                    <span id="current-scene">1</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">Path:</span>
+                    <span id="current-path">Main</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Game Area -->
+        <main class="game-main">
+            <!-- Character Display -->
+            <div class="character-section">
+                <div class="character-portrait" id="character-portrait">
+                    <img id="character-image" src="" alt="Character">
+                    <div class="character-name" id="character-name">Hamlet</div>
+                </div>
+            </div>
+
+            <!-- Story Text -->
+            <div class="story-section">
+                <div class="story-text" id="story-text">
+                    Welcome to Elsinore Castle! You are Prince Hamlet, and your world is about to change forever...
+                </div>
+            </div>
+
+            <!-- Choice Buttons -->
+            <div class="choices-section" id="choices-section">
+                <button class="choice-btn" id="choice-1" onclick="makeChoice(1)">Begin the Journey</button>
+            </div>
+
+            <!-- Character Info Panel -->
+            <div class="character-info" id="character-info">
+                <h3>Character Spotlight</h3>
+                <div id="character-description">
+                    Click on characters to learn more about them!
+                </div>
+            </div>
+        </main>
+
+        <!-- Game Controls -->
+        <div class="game-controls">
+            <button class="control-btn" id="save-btn" onclick="saveGame()">💾 Save</button>
+            <button class="control-btn" id="load-btn" onclick="loadGame()">📂 Load</button>
+            <button class="control-btn" id="restart-btn" onclick="restartGame()">🔄 Restart</button>
+            <button class="control-btn" id="hint-btn" onclick="showHint()">💡 Hint</button>
+        </div>
+
+        <!-- Educational Panel -->
+        <div class="educational-panel" id="educational-panel">
+            <h3>📚 Educational Notes</h3>
+            <div id="educational-content">
+                <p><strong>Hamlet</strong> is one of Shakespeare's most famous tragedies, written around 1600-1601. It explores themes of revenge, madness, mortality, and the complexity of human nature.</p>
+            </div>
+        </div>
+
+        <!-- Modal for Character Details -->
+        <div class="modal" id="character-modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <h2 id="modal-character-name">Character</h2>
+                <div id="modal-character-info">Character information will appear here.</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="hamlet-game.js"></script>
+</body>
+</html>
